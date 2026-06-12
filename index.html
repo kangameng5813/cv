@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - AMIRUDIN</title>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Main Content Layout */
+        .cv-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .cv-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h2.section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        /* Kontak & Info Pribadi */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .info-list i {
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* WA Button khusus */
+        .btn-wa {
+            background-color: #25d366;
+            color: white !important;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-wa:hover {
+            background-color: #20ba5a;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+
+        /* Timeline / Pengalaman */
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e5e7eb;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .timeline-item .role {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Keluarga */
+        .family-member {
+            background: #f9fafb;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .family-member p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .family-member strong {
+            color: var(--text-dark);
+        }
+
+        /* Footer / Action Button */
+        .action-area {
+            text-align: center;
+            padding: 30px;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .btn-print {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-print:hover {
+            background: #1d4ed8;
+        }
+
+        /* CSS KHUSUS CETAK/PRINT PDF */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .action-area, .btn-wa i:last-child {
+                display: none !important; /* Sembunyikan tombol cetak saat diprint */
+            }
+            .btn-wa {
+                background: transparent;
+                color: var(--text-dark) !important;
+                padding: 0;
+            }
+            .skill-tag {
+                border: 1px solid #94a3b8 !important;
+                background: transparent !important;
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>AMIRUDIN</h1>
+            <p>IT Specialist | Network Operations Center (NOC) Admin | Educator</p>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <div class="cv-content">
+            
+            <!-- KOLOM KIRI (Profil & Pengalaman) -->
+            <div class="left-column">
+                
+                <div class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-user"></i> Profil Profesional</h2>
+                    <p style="color: var(--text-light); text-align: justify; font-size: 0.95rem;">
+                        Seorang profesional di bidang Teknologi Informasi dengan pengalaman selama <b>10 tahun</b>. Memiliki spesialisasi mendalam di sub-bidang jaringan komputer dan internet, pengelolaan server, serta pengembangan sistem (Full-Stack Development). Saat ini aktif membagikan ilmu sebagai pengajar, mengelola infrastruktur jaringan secara remote (WFH) sebagai Admin NOC di perusahaan swasta, dan aktif mengembangkan berbagai sistem aplikasi berbasis web.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Pengalaman Kerja</h2>
+                    
+                    <div class="timeline-item">
+                        <h3>Admin NOC (Network Operations Center)</h3>
+                        <p class="role">PT. Jaringan Lintas Artha</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">Bertanggung jawab atas monitoring stabilitas jaringan, pemeliharaan server, penanganan gangguan (troubleshooting) sistem internet, dan memastikan uptime infrastruktur perusahaan berjalan optimal.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Tenaga Pendidik (Pengajar IT) & Developer</h3>
+                        <p class="role">SMAS Nurul Jadid</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">Mengajar ilmu komputer/informatika serta aktif merancang dan mengembangkan sistem aplikasi internal untuk optimalisasi operasional institusi.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-users"></i> Data Keluarga</h2>
+                    <div class="family-member">
+                        <p><strong>Istri:</strong> Vera Wulandari</p>
+                    </div>
+                    <div class="family-member">
+                        <p><strong>Anak ke-1:</strong> Habibah Sofiyatul Widad <small>(Lahir di Probolinggo, 2018)</small></p>
+                    </div>
+                    <div class="family-member">
+                        <p><strong>Anak ke-2:</strong> Ahmad Bassam Farhan Firdaus <small>(Lahir di Probolinggo, 2024)</small></p>
+                    </div>
+                    <div class="family-member">
+                        <p><strong>Anak ke-3:</strong> Ahmad Nabil Birrul Alim <small>(Lahir di Probolinggo, 2025)</small></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- KOLOM KANAN (Kontak & Keahlian) -->
+            <div class="right-column">
+                
+                <div class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-address-book"></i> Kontak & Info</h2>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fa-solid fa-calendar"></i> 
+                            <span>Probolinggo, 07 Okt 1991</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-venus-mars"></i> 
+                            <span>Laki-laki</span>
+                        </li>
+                       
+                        <li>
+                            <i class="fa-solid fa-envelope"></i> 
+                            <a href="mailto:rudy.amir1@gmail.com">rudy.amir1@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i> 
+                            <a href="https://kajianinformatika.blogspot.com" target="_blank">kajianinformatika.blogspot.com</a>
+                        </li>
+ <li>
+                            <i class="fa-brand fa-whatsapp"></i>
+                            <a href="https://wa.me/6282334214117" target="_blank" class="btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> 082334214117
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-network-wired"></i> Jaringan & OS</h2>
+                    <div class="skills-container">
+                        <span class="skill-tag">Jaringan Komputer</span>
+                        <span class="skill-tag">Infrastruktur Internet</span>
+                        <span class="skill-tag">Windows OS</span>
+                        <span class="skill-tag">Linux OS</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Linux Server</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-code"></i> Pemrograman</h2>
+                    <div class="skills-container">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">GAS V2 (Google Apps Script)</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TOMBOL CETAK -->
+        <div class="action-area">
+            <button class="btn-print" onclick="window.print()">
+                <i class="fa-solid fa-file-pdf"></i> Cetak / Download PDF
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
